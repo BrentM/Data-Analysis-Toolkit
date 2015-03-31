@@ -66,31 +66,36 @@ Now you are ready for the good data analysis stuff.
 ##Install Data Analysis Tools
 We can now install a couple tools for working with various data sets. This requires some more command line work but should be simple and give you a chance to learn the basics of the command line. 
 
-To Be Continued... {exciting and slightly ominous music}
-
 ###Install SQLite
 SQLite is a simple database that is easy to setup and share. When you create a new SQLite database the whole database just lives in a single file. It is easy to share or email this file to other people as a simple way to share your dataset. It is also convenient because if you mess something up you can just delete the database and start over. 
 
 For doing anything more than the simplest data analysis it is far easier to use a database instead of Excel. It takes a bit more time to learn but you will save many hours of pushing data around. When you find yourself needing a VLOOKUP call in excel that is probably the time to start looking at using a database. Additionaly, you can make complicated pivot tables in a database that would be a pain to do in Excel. Once you have your analysis complete it is simple to export you data to excel for reporting.
 
 It is simple to install SQLite. You just do:
+
     sudo apt-get install sqlite3
 
 You can check that it worked by running:
+
     sqlite3 --version
+
 This command will output the current version of SQLite. This happens to be version 3.xx which is why we use the sqlite3 command.
 
 ###Install Python
 It happens that a lot of helpful data analysis tools are written in Python (a popular programming language). You don't need to know Python to make use of all the great tools that are available. You will need to install some Python components so you virtual machine will know how to run Python programs.
 
 Run this command to get the Python tool for installing new Python software:
+
     sudo apt-get install python-pip
 
 Enter "y" when it asks you if you want to install new things. This will install pip the Python package manager. Pip will be used in later steps to install Python tools.
 
 Check that it worked:
+
     python --version
+
 And then:
+
     pip --version
 
 Both of these commands should output the current version of the tool as the response. You might have noticed a pattern - if you put --version at the end of commands they will tell you their current version. This is a common input for command line tools. It is an easy way to check that the tool is set up right at a basic level.
@@ -104,28 +109,35 @@ Documentation for csvkit is online here:
 https://csvkit.readthedocs.org/en/0.9.1/index.html
 
 Install it now!
+
     sudo pip install csvkit
 
 You'll notice that we had to use sudo here. I usually try to install things without sudo first because it is safer. In this case the install fails with a "permission denied" error. This is a very common occurence on Linux. It usually means that the install wanted to write to a directory that is not writeable for security reasons. The directory that hold commands for the system is write protected like this to prevent evil programs from replacing your normal commands with evil versions. This is why you often need to use sudo to install new commands.
 
 Check that it worked right using one of the commands from the package:
+
     in2csv --version
+
 You'll notice that --version did not work this time but we still got a very helpful message telling us how to use in2csv. This also tells us that the command is being recognised by the system properly.
 
 ###Install xmllint
 XMLLint will let you work with XML data before you import it into a database. Sometimes you only care about some information in an XML file and don't want to clog your database up with useless data. 
 
 Install it:
+
     sudo apt-get install libxml2-utils
+
 You now know how to check if it worked.
 
 ###Install xmlutils
+
    sudo pip install xmlutils
 
 This package will let you convert to JSON and csv, and import to a database.
 
 ###Install JQ
 You are almost done. This utility lets you work with JSON in a way that is similar to the XML utilities abobe but JSON instead of XML.
+
     sudo apt-get install jq
 
 ### Done installing
