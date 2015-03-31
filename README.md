@@ -131,7 +131,7 @@ You now know how to check if it worked.
 
 ###Install xmlutils
 
-   sudo pip install xmlutils
+    sudo pip install xmlutils
 
 This package will let you convert to JSON and csv, and import to a database.
 
